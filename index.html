@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XCurrent | רשימת שוטים ודגשים 6.9.26</title>
+<style>
+  :root{
+    --ink:#0f1720; --ink-soft:#41505f; --line:#dfe4ea; --bg:#f6f7f9; --card:#ffffff;
+    --navy:#1a2430; --amber:#c8781f; --green:#1a7f37; --red:#b4232c; --blue:#1f5fa8;
+  }
+  *{box-sizing:border-box}
+  html,body{overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Heebo","Assistant","Rubik","Segoe UI",system-ui,-apple-system,sans-serif;
+    direction:rtl;text-align:right;line-height:1.65;font-size:17px}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px 70px}
+  header{background:var(--navy);color:#fff;padding:40px 0 32px;margin-bottom:26px}
+  header .wrap{padding-bottom:0}
+  .eyebrow{font-size:13px;letter-spacing:.18em;color:#8fa3b8;margin:0 0 10px}
+  h1{margin:0 0 12px;font-size:32px;font-weight:800;letter-spacing:-.01em}
+  .meta{display:flex;gap:9px;flex-wrap:wrap;margin:0;font-size:14px}
+  .meta span{background:rgba(255,255,255,.12);color:#dbe5ef;padding:4px 13px;border-radius:99px}
+  h2{font-size:23px;margin:44px 0 12px;padding-bottom:9px;border-bottom:2px solid var(--navy)}
+  h3{font-size:18px;margin:22px 0 10px}
+  p{margin:10px 0}
+  .lead{color:var(--ink-soft);font-size:15.5px;margin:6px 0 0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:12px 0}
+  .card.hot{border-right:5px solid var(--red)}
+  .card.wait{border-right:5px solid var(--amber)}
+  .card.info{border-right:5px solid var(--blue)}
+  .card h3{margin-top:0}
+  ul,ol{margin:10px 0;padding-right:22px}
+  li{margin:7px 0}
+  .rules{counter-reset:r;list-style:none;padding:0;margin:14px 0}
+  .rules li{counter-increment:r;background:var(--card);border:1px solid var(--line);
+    border-right:5px solid var(--blue);border-radius:12px;padding:14px 18px 14px 52px;margin:10px 0;position:relative}
+  .rules li b{display:block;font-size:17px;margin-bottom:4px}
+  .rules li::before{content:counter(r);position:absolute;left:14px;top:13px;
+    background:#e6eef8;color:var(--blue);font-weight:800;font-size:13px;
+    width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .rules li.key{border-right-color:var(--green)}
+  .rules li.key::before{background:#e3efe6;color:var(--green)}
+  .tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0;
+    border:1px solid var(--line);border-radius:10px;background:var(--card)}
+  table{width:100%;border-collapse:collapse;font-size:15.5px;min-width:640px}
+  th,td{padding:11px 13px;text-align:right;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--navy);color:#fff;font-weight:600;font-size:14.5px}
+  tr:last-child td{border-bottom:none}
+  .shots td:first-child{font-weight:800;white-space:nowrap;text-align:center;background:#f3f5f8;font-size:15px}
+  .shots td:first-child small{display:block;font-weight:600;color:var(--ink-soft);font-size:12.5px;white-space:normal;margin-top:3px}
+  .shots th:nth-child(1){width:16%}
+  .shots th:nth-child(2){width:68%}
+  .shots th:nth-child(3){width:16%}
+  .st{white-space:nowrap;font-weight:800;font-size:14px;text-align:center}
+  .st.ok{color:var(--green)}
+  .st.todo{color:var(--amber)}
+  .st.block{color:var(--red)}
+  tr.blocked td{background:#fff6f6}
+  tr.done td{background:#f7fbf8}
+  .note{color:var(--ink-soft);font-size:15px}
+  q{quotes:'"' '"'}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--ink-soft);margin:10px 0 0}
+  .summary{background:#eef2f7;border:1px solid #cfd8e3;border-right:6px solid var(--navy);
+    border-radius:12px;padding:16px 20px;margin:0 0 4px}
+  .summary p{margin:0}
+  .summary p+p{margin-top:8px}
+  .summary .headline{font-size:19px;font-weight:600;line-height:1.55}
+  .summary .num{font-weight:800;font-size:22px;color:var(--navy)}
+  .summary .num.ok{color:var(--green)}
+  .summary .num.todo{color:var(--amber)}
+  .summary .num.block{color:var(--red)}
+  .summary .sub{color:var(--ink-soft);font-size:15.5px}
+  .wave{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 19px;margin:12px 0}
+  .wave h3{margin:0 0 6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .wave ul{margin:6px 0 0}
+  .pill{font-size:12.5px;font-weight:800;padding:3px 11px;border-radius:99px;background:#e8ecf1;color:var(--ink-soft)}
+  .pill.free{background:#e3efe6;color:var(--green)}
+  .pill.cost{background:#fbeee0;color:var(--amber)}
+  .pill.block{background:#fbe7e8;color:var(--red)}
+  .pill.next{background:#e6eef8;color:var(--blue)}
+  @media (max-width:720px){
+    body{font-size:16px}
+    h1{font-size:26px}
+    h2{font-size:20px;margin-top:34px}
+    .wrap{padding:0 14px 56px}
+    .tablewrap{border:none;background:transparent;overflow-x:visible}
+    table{min-width:0;font-size:15px}
+    .shots thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    .shots tr{display:block;background:var(--card);border:1px solid var(--line);
+      border-right:5px solid var(--amber);border-radius:12px;padding:4px 2px;margin:0 0 12px}
+    .shots tr.done{border-right-color:var(--green)}
+    .shots tr.blocked{border-right-color:var(--red)}
+    .shots td{display:block;border-bottom:none;padding:6px 14px}
+    .shots td:first-child{text-align:right;background:transparent;font-size:17px;padding-top:11px}
+    .shots td:first-child small{display:inline;margin:0 6px 0 0}
+    .shots td.st{text-align:right;padding-bottom:12px}
+    .shots tr.done td,.shots tr.blocked td{background:transparent}
+    .rules li{padding:14px 16px 14px 46px}
+    .summary{padding:14px 15px;border-right-width:5px}
+    .summary .headline{font-size:17px}
+    .summary .num{font-size:19px}
+    .summary .sub{font-size:15px}
+  }
+  @media print{
+    body{background:#fff;font-size:12pt}
+    header{background:var(--navy) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:22px 0}
+    th{background:var(--navy) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .card,.wave,.rules li,table{break-inside:avoid;page-break-inside:avoid}
+    h2{break-after:avoid}
+    .wrap{max-width:none;padding:0 8mm}
+    .tablewrap{overflow:visible}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">NEW ANGLE · XCURRENT</p>
+    <h1>רשימת שוטים ודגשים</h1>
+    <div class="meta">
+      <span>6 בספטמבר 2026</span>
+      <span>סבב תיקוני סטוריבורד</span>
+      <span>לנדב</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="summary">
+    <p class="headline"><span class="num todo">10</span> שוטים לביצוע, <span class="num ok">7</span> סגורים, <span class="num block">2</span> חסומים עד שההדמיה של הקופסה מגיעה מצדק.</p>
+    <p class="sub">גל 1 כולו פוטושופ. היעד: מעבר לווידאו.</p>
+  </div>
+
+  <h2>דגשים שחלים על כל השוטים</h2>
+  <p class="lead">לא רק על השוטים המתוקנים. אלה הכללים החוצים של הסרטון.</p>
+
+  <ol class="rules">
+    <li class="key">
+      <b>פרופורציות בכל השוטים</b>
+      פלטה = מטר על מטר. רחפן = כ-70 סנטימטר. הרפרנס הרשמי לסקייל הוא 15B ו-15C, צדק אישר אותו במפורש: <q>פה הגודל נכון מאוד, בדיוק, זה הגודל</q>. כל תיקון פרופורציה נמדד מולו, גם בשוטים שלא נבדקו בשיחה.
+    </li>
+    <li class="key">
+      <b>האנרגיה היא הגיבור, לא יכולת התעופה של הרחפן</b>
+      זה המסר המרכזי של הלקוח. הרפרנס: הסרטון הראשון של Anduril, זה שבשטח, עם אינפוגרפיקה גדולה ומשמעותית. רואים אחוזי סוללה יורדים ונפתח חלון שמודיע שהמשטח זמין.
+    </li>
+    <li>
+      <b>צבעי דאטה: לבן וכחול</b>
+      דאטה לבן. צ'ארג'ינג כחול. בלי ירוק.
+    </li>
+    <li>
+      <b>פלקס 100, לא 120</b>
+      Flex 120 לא קיים. לשנות ל-100 בכל הגרפיקות.
+    </li>
+    <li>
+      <b>בלי מיתוג DJI</b>
+      להסיר את המיתוג ואת שמות החברות מכל הרחפנים, בכל השוטים.
+    </li>
+    <li>
+      <b>טיפוגרפיה בקווים ישרים</b>
+      מנקודת המוצא לנקודת הסיום, בלי עיקולים ובלי זוויות. הרפרנס הוא הסרטון הראשון של Anduril.
+    </li>
+    <li>
+      <b>נתון מוצר: רחפן של 7 דקות</b>
+      6 עד 7 דקות בלי פיילוד, פחות עם פיילוד. זה הנתון שמניע את מד הסוללה בכל הגרפיקות.
+    </li>
+  </ol>
+
+  <h2>השוטים</h2>
+  <div class="legend">
+    <span><b class="st ok">✅ סגור</b> אין פעולה</span>
+    <span><b class="st todo">⚠️ לביצוע</b> נכנס לגלי העבודה</span>
+    <span><b class="st block">⛔ חסום</b> ממתין לצדק</span>
+  </div>
+
+  <div class="tablewrap">
+  <table class="shots">
+    <thead>
+      <tr><th>שוט</th><th>מה צריך לעשות</th><th>סטטוס</th></tr>
+    </thead>
+    <tbody>
+
+      <tr class="done">
+        <td>2B<small>העין</small></td>
+        <td>אין פעולה. הריבוע עם הלוגו כבר הורד, הלוגו נשאר בתוך האישון, וצדק אישר במלואו.</td>
+        <td class="st ok">✅ סגור</td>
+      </tr>
+
+      <tr>
+        <td>7B / 7C<small>מסך המפה</small></td>
+        <td>לפשט את המסך. להשאיר את המפה עצמה בסגנון ווייז ולנקות את כל המידע מסביב. להוסיף כותרת גדולה על המסך: XCurrent Map או XCurrent Control או XCurrent Mesh. השם טרם נבחר. שתי האופציות נשארות כחומר עריכה: קלוזאפ על המסך מול המסך בחדר הבקרה.</td>
+        <td class="st todo">⚠️ לביצוע</td>
+      </tr>
+
+      <tr>
+        <td>11B<small>המערך</small></td>
+        <td>שלוש פעולות. אחת, להגדיל את הפלטות. שתיים, להקטין את הרחפנים לכ-70 סנטימטר על פלטה של מטר על מטר. שלוש, להוסיף עוד שלוש פלטות, משש לתשע, עם מרווחים, כדי שייראה מנחת אמיתי. רחפנים לא נוחתים צמוד, הפרופלורים היו מתנגשים.</td>
+        <td class="st todo">⚠️ לביצוע</td>
+      </tr>
+
+      <tr class="done">
+        <td>15B / 15C<small>הרפרנס לסקייל</small></td>
+        <td>אין פעולה. זה הרפרנס הרשמי לסקייל, וכל תיקון פרופורציה בשאר השוטים נמדד מולו.</td>
+        <td class="st ok">✅ סגור</td>
+      </tr>
+
+      <tr>
+        <td>17A<small>הפלטה הבודדת</small></td>
+        <td>לייצר את הפלטה הבודדת מפינה של אותו גג ושל המערך הקיים, לא ממקום נפרד. שמירת קונטינואיטי: הצופה צריך לזהות שזה אותו מקום.</td>
+        <td class="st todo">⚠️ לביצוע</td>
+      </tr>
+
+      <tr class="done">
+        <td>17B / 17C<small>שתי אופציות</small></td>
+        <td>אין פעולה. 17B הוא המראה בתוך המערכת המשטרתית, 17C הוא POV של הרחפן. שניהם חומר גלם לעריכה, צדק קיבל.</td>
+        <td class="st ok">✅ סגור</td>
+      </tr>
+
+      <tr>
+        <td>22A<small>גג בית החולים</small></td>
+        <td>שלוש פעולות. אחת, טקסטורת גג נקייה וחדשה יותר, בתוספת upscale להחלקת הגרעיניות. שתיים, להרחיק את הפלטה מהמנורה ולהטות את המנורה לכיוונה, המנורה נשארת כי היא נותנת ספוטלייט על הרחפן בלילה. שלוש, מקום של כבוד למשטח: במה קטנה מבטון בפינה מסודרת, עם גידור או עמודים סביב, לא במקום נגיש לעוברי אורח. משטח לא מונח סתם על הרצפה.</td>
+        <td class="st todo">⚠️ לביצוע</td>
+      </tr>
+
+      <tr class="done">
+        <td>23A / 23C<small>טיפוגרפיה</small></td>
+        <td>אין פעולה מעבר לכללי הטיפוגרפיה הכלליים. הטיפוגרפיה המתוקנת אושרה.</td>
+        <td class="st ok">✅ סגור</td>
+      </tr>
+
+      <tr>
+        <td>24B<small>ההחלפה</small></td>
+        <td><strong>העבודה המשמעותית ביותר.</strong> לבנות מערכת גרפית שמעמידה את האנרגיה במרכז: מד סוללה עם אחוזים, הבהוב בבטריה שמתרוקנת, שינוי צבע, חלון <q>XCurrent available energy</q>, וחץ שמראה לאן צריך לטוס. ברוח האינפוגרפיקה הגדולה של Anduril.</td>
+        <td class="st todo">⚠️ לביצוע</td>
+      </tr>
+
+      <tr class="done">
+        <td>26B<small>POV הבית</small></td>
+        <td>אין פעולה. ההדגשה של יכולות הרחפן כבר ירדה לטובת הפלטה. ייתכן שלא ייכנס לעריכה בכלל.</td>
+        <td class="st ok">✅ סגור</td>
+      </tr>
+
+      <tr class="done">
+        <td>30B עד 33B<small>חצים וכתוביות</small></td>
+        <td>אין פעולה. החצים בסדר, וגודל הכתוביות והחלון הוא עניין של aspect ratio ולא של הגרפיקה עצמה.</td>
+        <td class="st ok">✅ סגור</td>
+      </tr>
+
+      <tr>
+        <td>אובייקט שחור<small>על המשטח, בצד שמאל</small></td>
+        <td>להסיר. זה ארטיפקט, לא חלק מהעיצוב.</td>
+        <td class="st todo">⚠️ לביצוע</td>
+      </tr>
+
+      <tr class="blocked">
+        <td>35A / 36B<small>הכלב והקופסה</small></td>
+        <td><strong>לא לייצר כרגע.</strong> הקופסה הנוכחית יורדת. צדק ישלח הדמיה של הקופסה שלו, זו שנפתחת ועולה ויורדת ומעוצבת בשפה של החברה, ומבקש גרסת מיני שלה. עד שההדמיה מגיעה שני השוטים תקועים.</td>
+        <td class="st block">⛔ חסום</td>
+      </tr>
+
+      <tr>
+        <td>37B / 37C<small>לפני ואחרי הטיפוגרפיה</small></td>
+        <td>אותו שוט לפני ואחרי כניסת הטיפוגרפיה, עם dolly out. סוגיה פתוחה יחידה: מיקום מד הסוללה, בקו ישר מול הרחפן או מאחור. <strong>לא הוכרע, מחליטים על הווידאו.</strong></td>
+        <td class="st todo">⚠️ לביצוע</td>
+      </tr>
+
+      <tr>
+        <td>38B עד 44B<small>הרחפן בבית</small></td>
+        <td>לבנות מד סוללה בצד המסך שיורד כל הזמן ובקצב מהיר. בקומה הראשונה 80 אחוז, אחר כך בנקודה אחרת הוא כבר נמוך יותר, כדי שהצופה יבין שעבר זמן. יחד עם 24B: לייצר את הרגע שבו הרחפן בקצה הסוללה בתוך הבית.</td>
+        <td class="st todo">⚠️ לביצוע</td>
+      </tr>
+
+      <tr>
+        <td>49B / 49C<small>חזרה לפלטה, טעינה</small></td>
+        <td>לנקות את העומס בפריים. דאטה לבן, צ'ארג'ינג כחול, הירוק יורד. קווים ישרים יותר.</td>
+        <td class="st todo">⚠️ לביצוע</td>
+      </tr>
+
+      <tr>
+        <td>50B / 51B / 52B<small>סיכום המוצר</small></td>
+        <td>המסר סגור, הפלטה היא המוצר המרכזי. פתוח רק הצבע: לפעמים נראה זהב ולפעמים לא. בינתיים נשאר צהוב, והצבע ידויק ב-color correction בשלב הווידאו.</td>
+        <td class="st todo">⚠️ לביצוע</td>
+      </tr>
+
+      <tr class="done">
+        <td>ההחלפה<small>עצמה</small></td>
+        <td>אין פעולה. היא כבר קיימת בסטוריבורד: רחפן אחד מעל הבית עם אנרגיה יורדת, ואחד מתעורר במשטח הבודד ובא לעזרתו.</td>
+        <td class="st ok">✅ סגור</td>
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+
+  <h2>תוכנית העבודה</h2>
+
+  <div class="wave">
+    <h3>גל 1 <span class="pill free">פוטושופ</span></h3>
+    <ul>
+      <li>תיקון פרופורציות רחפן מול פלטה <strong>בכל השוטים</strong>.</li>
+      <li>הסרת מיתוג DJI ושמות חברות מכל הרחפנים.</li>
+      <li>הסרת האובייקט השחור מהמשטח.</li>
+      <li>יישור הטיפוגרפיה לקווים ישרים.</li>
+      <li>צבעי דאטה: לבן וכחול, בלי ירוק.</li>
+      <li>שינוי פלקס 120 ל-100 בכל הגרפיקות.</li>
+    </ul>
+  </div>
+
+  <div class="wave">
+    <h3>גל 2 <span class="pill cost">ייצור מחדש</span></h3>
+    <ul>
+      <li><strong>11B</strong> עם תשע פלטות ומרווחים נכונים.</li>
+      <li><strong>17A</strong> מפינת המערך, לשמירת קונטינואיטי.</li>
+      <li><strong>22A</strong> עם טקסטורת גג נקייה, פלטה מרוחקת מהמנורה, ובמה מבטון.</li>
+      <li><strong>7B / 7C</strong> עם מפה מפושטת בסגנון ווייז וכותרת XCurrent על המסך.</li>
+    </ul>
+  </div>
+
+  <div class="wave">
+    <h3>גל 3 <span class="pill cost">גרפיקת הסוללה</span> <span class="pill next">המסר המרכזי</span></h3>
+    <p>מערכת מד הסוללה לאורך <strong>24B, 38B ו-44B</strong>, ברוח האינפוגרפיקה של Anduril: אחוזים, הבהוב, שינוי צבע, חלון זמינות אנרגיה, וחץ ניווט. זה הלב של הסרטון מבחינת הלקוח.</p>
+  </div>
+
+  <div class="wave">
+    <h3>גל 4 <span class="pill block">חסום</span></h3>
+    <p><strong>35A ו-36B</strong> ממתינים להדמיית הקופסה מצדק. אין מה לייצר עד שהיא מגיעה.</p>
+  </div>
+
+  <div class="wave">
+    <h3>גל 5 <span class="pill next">היעד</span></h3>
+    <p>מעבר לווידאו. הסבב הבא מול צדק נעשה על הנפשה, אולי לייב בשיחה משותפת.</p>
+  </div>
+
+  <h2>פתוח אצל צדק</h2>
+
+  <div class="card hot">
+    <h3>⛔ 1. הדמיית הקופסה</h3>
+    <p>הקופסה שלו נפתחת, עולה ויורדת, מעוצבת בשפה של החברה, ומיועדת לרחפנים גדולים יותר. הוא רוצה גרסת מיני שלה, וזה רלוונטי גם לסרטונים הבאים. <strong>חסם פעיל:</strong> 35A ו-36B לא זזים עד שההדמיה מגיעה.</p>
+  </div>
+
+  <div class="card wait">
+    <h3>⚠️ 2. אישור צבע המשטח</h3>
+    <p>לבחור מתוך שלושת הצבעים ששלח. סגול נפסל. אנחנו ממליצים על צהוב בגלל הקונטרסט בפריים. לא חוסם, כי אפשר לדייק ב-color correction.</p>
+  </div>
+
+  <div class="card info">
+    <h3>3. תיקון Flex 120 באתר שלהם</h3>
+    <p>באתר מופיע דגם שלא קיים. זה בצד שלהם ולא חוסם אותנו, אבל שווה לוודא שהוא מטפל בזה.</p>
+  </div>
+
+</div>
+</body>
+</html>
