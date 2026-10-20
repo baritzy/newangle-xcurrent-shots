@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-20",
+  "page": "judith-pack-20-10/index.html",
+  "automated_coverage": "pass",
+  "data_integrity": "pass",
+  "browser_test": "pass",
+  "notes": "20.10 short rewrite per Eytan: links list (trailer, site, investor page, YouTube, Instagram, TikTok @thejudithseries1, Facebook, investors list on Drive PDF+CSV, private to Eytan and Nadav), 4 messages, FB post, status, story text. Message texts verified identical to the approved originals (7/7 innerText match). 0 occurrences of /public/ and the-judith-websit; 0 em dashes; noindex present. agent-browser at 390px: scrollWidth == clientWidth (390), 7 copy buttons with existing targets, light and dark checked. Investor table itself NOT published, only a Drive link."
+}
