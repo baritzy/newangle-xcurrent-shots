@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-26",
-  "page": "xcurrent-border-looks-26-10/index.html",
+  "date": "2026-10-27",
+  "page": "judith-pack-20-10/index.html",
   "automated_coverage": "pass",
   "data_integrity": "pass",
   "browser_test": "pass",
-  "notes": "26.10 XCurrent border film look-dev page: 5 designs x 3 shots + yellow bonus. 16 JPEG frames (2.5MB). agent-browser at 390x844: scrollWidth == clientWidth (390), 17 img elements, 0 broken. Desktop 1440 screenshot checked. noindex meta added, robots.txt disallow in place. 0 em/en dashes. Content reviewed: no internal notes, no pricing, no Rafael material."
+  "notes": "27.10 per Eytan: 'בשבוע הבא' -> 'בקרוב' (4 places, 0 left); X link https://x.com/TheJudithSeries (HTTP 200) added to all 6 link lists (links list, m1-m4, FB post). 0 em dashes, noindex present, 7 copy buttons with valid targets, 0 tag mismatches. agent-browser 390px: scrollWidth==clientWidth (390), 6 X anchors, m1 innerText includes X line after Facebook. Screenshot temp/judith-viral/pack-qa.png."
 }
