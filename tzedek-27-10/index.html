@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>XCurrent גבול: הערות צדק 27.10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f5f7;--card:#ffffff;--ink:#1b222b;--mut:#5b6672;--line:#e1e5ea;
+  --accent:#0e7490;--accent-soft:#e6f4f7;--hl:#fff6d6;--hl-line:#f0d27a;
+  --keep:#15803d;--keep-bg:#e7f6ec;--fix:#b42318;--fix-bg:#fdecea;--ref:#475467;--ref-bg:#eef1f4;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.7 "Heebo",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-text-size-adjust:100%}
+main{max-width:880px;margin:0 auto;padding:20px 16px 80px}
+a{color:var(--accent)}
+bdi,.ltr{unicode-bidi:isolate}
+code{direction:ltr;unicode-bidi:isolate;display:inline-block;font:0.9em/1.4 ui-monospace,Menlo,Consolas,monospace;background:var(--ref-bg);padding:1px 6px;border-radius:4px}
+
+/* header */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin:6px 0 4px}
+.kicker{color:var(--mut);font-size:14px;margin:0}
+.mdbtn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;background:var(--ink);color:#fff;font-size:14px;font-weight:500;padding:7px 14px;border-radius:999px;white-space:nowrap}
+.mdbtn:hover{background:#000}
+h1{font-size:clamp(24px,5.5vw,34px);line-height:1.25;font-weight:800;margin:8px 0 6px}
+.meta{color:var(--mut);margin:0 0 18px;font-size:15px}
+
+/* sticky toc */
+nav.toc{position:sticky;top:0;z-index:20;background:rgba(244,245,247,.94);backdrop-filter:saturate(1.4) blur(6px);-webkit-backdrop-filter:saturate(1.4) blur(6px);border-bottom:1px solid var(--line);margin:0 -16px 18px;padding:8px 16px}
+nav.toc ol{list-style:none;margin:0;padding:0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav.toc ol::-webkit-scrollbar{display:none}
+nav.toc a{display:block;white-space:nowrap;text-decoration:none;color:var(--ink);font-size:13.5px;padding:4px 11px;border:1px solid var(--line);border-radius:999px;background:#fff}
+nav.toc a:hover{border-color:var(--accent);color:var(--accent)}
+
+/* boxes */
+.summary{background:var(--hl);border:1px solid var(--hl-line);border-right:6px solid #e0a800;border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.summary h2{margin:0 0 6px;font-size:19px}
+.summary p{margin:0;font-size:17.5px;line-height:1.75}
+.howto{background:var(--accent-soft);border:1px solid #b9e0e8;border-radius:12px;padding:16px 18px;margin:0 0 22px}
+.howto h2{margin:0 0 8px;font-size:19px}
+.howto ul{margin:0;padding-inline-start:20px}
+.howto li{margin:0 0 6px}
+.changed{background:#fff;border:2px solid var(--accent);border-radius:10px;padding:12px 14px;margin:12px 0}
+.changed h3{margin:0 0 6px;font-size:16.5px;color:var(--accent)}
+.changed ol{margin:0;padding-inline-start:22px}
+.changed li{margin:0 0 5px}
+
+section.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 8px;margin:0 0 20px}
+section.card>h2{font-size:22px;font-weight:700;margin:0 0 10px;line-height:1.35}
+h3{font-size:18px;margin:20px 0 6px;line-height:1.4}
+section.card>h3:first-of-type{margin-top:6px}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 12px;padding-inline-start:24px}
+li{margin:0 0 9px}
+li ul{margin-top:6px}
+.note{color:var(--mut);font-size:15px}
+.sub{font-weight:700;margin:14px 0 6px}
+
+/* figures */
+figure{margin:12px 0 18px;background:#0f1419;border-radius:10px;overflow:hidden}
+figure img{display:block;width:100%;height:auto}
+figcaption{background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px;padding:8px 12px;font-size:14px;line-height:1.5;color:var(--ink)}
+figcaption .when{color:var(--mut);font-size:13px;display:block}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 18px}
+.pair figure{margin:0}
+@media (max-width:640px){.pair{grid-template-columns:1fr}}
+.tag{display:inline-block;font-size:12.5px;font-weight:700;line-height:1;padding:4px 8px;border-radius:999px;margin-inline-end:6px;vertical-align:1px}
+.keep{color:var(--keep);background:var(--keep-bg);border:1px solid #b6e2c3}
+.fix{color:var(--fix);background:var(--fix-bg);border:1px solid #f4c4be}
+.ref{color:var(--ref);background:var(--ref-bg);border:1px solid #d6dbe1}
+
+/* beat table */
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px;margin:6px 0 14px}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:15px;line-height:1.55}
+th,td{text-align:right;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{background:#1b222b;color:#fff;font-weight:500;position:sticky;top:0}
+tr:last-child td{border-bottom:0}
+tbody tr:nth-child(even) td{background:#f8f9fb}
+td.beat{font-weight:800;font-size:17px;width:46px;text-align:center;color:var(--accent)}
+td.stop{width:34%}
+.scrollhint{display:none;color:var(--mut);font-size:13px;margin:0 0 4px}
+@media (max-width:700px){.scrollhint{display:block}}
+
+footer{color:var(--mut);font-size:13.5px;text-align:center;margin-top:28px}
+</style>
+</head>
+<body>
+<main>
+
+<div class="top">
+  <p class="kicker">New Angle · <bdi>XCurrent</bdi> · סרטון הגבול</p>
+  <a class="mdbtn" href="notes-for-claude.md">קובץ לקלוד (md)</a>
+</div>
+<h1><bdi>XCurrent</bdi>, סרטון הגבול: הערות צדק על שתי גרסאות השלד</h1>
+<p class="meta">זום 27.10.26 · <strong>משתתפים:</strong> צדק, נדב, איתן · 38 דקות. צדק פתח: "אפשר להשתמש בשני הסרטונים האלה, שניהם, רק צריך לדייק אותם" (06:15).</p>
+
+<nav class="toc" aria-label="תוכן העניינים">
+  <ol>
+    <li><a href="#howto">איך לקרוא</a></li>
+    <li><a href="#s0">בשורה אחת</a></li>
+    <li><a href="#s1">1. מה ראינו</a></li>
+    <li><a href="#s2">2. מה לוקחים</a></li>
+    <li><a href="#s3">3. ההחלטות</a></li>
+    <li><a href="#s4">4. המבנה</a></li>
+    <li><a href="#s5">5. העיצוב</a></li>
+    <li><a href="#s6">6. טקסט וקול</a></li>
+    <li><a href="#s7">7. סדר העבודה</a></li>
+    <li><a href="#s8">8. לו"ז</a></li>
+    <li><a href="#s9">9. פתוח</a></li>
+    <li><a href="#s10">10. לא קשור</a></li>
+  </ol>
+</nav>
+
+<div class="summary" id="s0">
+  <h2>בשורה אחת</h2>
+  <p>בונים על <strong>גרסה 1</strong>: פלטה בודדת שמסתובבת, <strong>עוצרת על כל רחפן לנתונים</strong>, ממשיכה ומחליפה רחפן. מגרסה 2 לוקחים <strong>את הגדר, הים והמרחקים</strong> (הכל רחוק יותר ופחות צפוף). העולם בעיצוב <strong>"צפחה לילית"</strong>. אין קריינות בכלל, רק טקסט על המסך ומוזיקה, ולכן כל נקודת עצירה היא מקום לנתון. <strong>ה-<bdi>UGV</bdi> מקבל רגע משלו</strong> לפני הנגמ"ש, והסיום הוא מבט על עם קווים ומרחקים, ואז הלוגו.</p>
+</div>
+
+<div class="howto" id="howto">
+  <h2>איך לקרוא</h2>
+  <ul>
+    <li>זה עדכון לקובץ <bdi dir="rtl">"XCurrent-גבול-הערות-צדק-לנדב-25.10.26"</bdi> שכבר אצלך. <strong>כל מה שכתוב כאן גובר עליו.</strong> מה שלא מוזכר כאן נשאר בתוקף (בלי אויב, בלי פריצה, בלי כלב, בלי טבעות ומשושים סביב הפלטה, שום מודל של רפאל, הפלטות מאחורי ההרים).</li>
+    <li>בזום הוצגו שתי גרסאות שלד, <strong>שתיהן של נדב</strong>: <strong>גרסה 1</strong> (נשלחה בוואטסאפ 26.10 ב-22:28, באורך 1:19) ו<strong>גרסה 2</strong> (נשלחה 27.10 ב-01:47, באורך 1:07). <strong>הבסיס הוא גרסה 1.</strong> מגרסה 2 לוקחים רק את מה שמסומן בסעיף 2.</li>
+    <li><strong>הצעד הבא:</strong> פריימי עיצוב עם טקסט בכל נקודת עצירה (סעיף 7), לאישור צדק. <strong>במקביל</strong> מתקנים את השלד לפי ההערות כאן ("נתקן את הווידאו תוך כדי", 36:26). <strong>רק הרינדור הסופי מחכה לאישור של צדק.</strong></li>
+  </ul>
+  <div class="changed">
+    <h3>מה השתנה מאז 25.10 (כדי לא לבנות לפי הישן)</h3>
+    <ol>
+      <li>העמודים של התחנות לבנים ולא זוהרים, ואין "חתימת אור" שזוהרת בכל מקום בטופ שוט.</li>
+      <li>ה-<bdi>EVO</bdi> יוצא מקופסה ב-<bdi>UGV</bdi>, ולא ממריא מהמדרון האחורי.</li>
+      <li>בפועל ירד הרעיון של רחפן שנוחת על הנגמ"ש בנסיעה. הנגמ"ש רק מופיע, רחוק, עם משטח ואור קטן.</li>
+      <li>הסיום הוכרע: חלון בצד, טופ שוט עם מרחקים בלבד, ואז <bdi>XCurrent</bdi>. אין קו מסלול של רחפן.</li>
+      <li>ה-<bdi>UGV</bdi> עלה בחשיבות מעל הנגמ"ש.</li>
+      <li>נדב טס ביום ראשון 1.11, לא ב-30.10.</li>
+    </ol>
+  </div>
+  <ul>
+    <li class="note">הזמנים בסוגריים הם דקות בהקלטת הזום (27.10.26, 14:30). התמלול אוטומטי וייחוס הדוברים לפי הקשר. מה שלא ודאי מסומן "(לא ודאי)".</li>
+    <li class="note">התגיות ליד התמונות: <span class="tag keep">לשמור</span> <span class="tag fix">לתקן</span> <span class="tag fix">לצאת</span> <span class="tag ref">רפרנס</span>. פריימים של גרסה 2 מסומנים בזמן שלהם בהקלטת הזום. פריימים של גרסה 1 מסומנים בזמן ההערה שהם ממחישים.</li>
+  </ul>
+</div>
+
+<section class="card" id="s1">
+  <h2>1. מה ראינו (לזיהוי)</h2>
+  <ul>
+    <li><strong>גרסה 1 (הבסיס):</strong> פתיח <bdi>XCURRENT</bdi>. פלטה שחורה עם מסגרת תכלת על רשת, רחפן עליה ופסים אפורים במקום טקסט. סיבוב, החלפת רחפן, 6 פלטות מתחברות עם רחפנים עליהן. נסיגה החוצה, גדר והרים, ספינה וכטב"ם שממריא, נגמ"ש, מבט על עם עמודים (תחנות) מאחורי ההרים, ומפה עם קו מחבר. לוגו בסוף.</li>
+    <li><strong>גרסה 2:</strong> פתיח <bdi>XCURRENT</bdi>. שטח עם אבנים, גדר חומה וים כהה. פלטה על השטח, רחפנים שעפים אליה ממנה ובחזרה ("רחפנים באוויר"). 6 פלטות עם נגמ"ש לידן. ספינה, גדר גבוהה בטקסטורה, נגמ"ש ו-<bdi>UGV</bdi> על כביש רשת ליד הגדר. מבט על עם קווים כחולים, וחלון קטן בצד שמראה את יחידת 6 הפלטות. לוגו.</li>
+  </ul>
+</section>
+
+<section class="card" id="s2">
+  <h2>2. מה לוקחים מכל גרסה</h2>
+  <p class="sub">מגרסה 1 (הבסיס, "רוב מה שיש פה זה מהגרסה הראשונה", 26:18):</p>
+  <ul>
+    <li><strong>הסיבוב של הפלטה.</strong> "אני אוהב את הסיבוב הזה יותר מהסיבוב שם" (11:10). על גרסה 2: "בסרטון הקודם עשית סיבוב, עצירה, זה נראה לי יותר <bdi>make sense</bdi>... כאן זה בא, הולך, עושה לי דברים בראש" (18:59 עד 19:11).</li>
+    <li>המבנה הכללי של הסרט.</li>
+  </ul>
+
+  <p class="sub">מגרסה 2 לוקחים (26:09 עד 26:17, 19:22 עד 19:24):</p>
+  <ul>
+    <li><strong>הטקסטורות של הגדר.</strong> "נראה שהחלפתם את הגדר, באמת כמו גדר של ארצות הברית" (19:12), ו"הגדר פה נהדרת" (19:23).</li>
+    <li><strong>הים.</strong> "הים פה נהדר".</li>
+    <li><strong>המרחבים:</strong> הכל רחוק יותר. נדב: "בסרטון שבא אחר כך תראה שלקחתי את זה יותר רחוק" (15:01).</li>
+    <li><strong>החלון בצד לפני הטופ שוט</strong> (יחידת הפלטות המחוברות), בלי רחפן עליה (33:31 עד 33:52). ראו סעיף 4, ביט ח'.</li>
+  </ul>
+  <div class="pair">
+    <figure>
+      <img src="images/v2-fence.jpg" alt="גרסה 2: גדר גבוהה בטקסטורה, נגמ&quot;ש ורכבים מעליה" loading="lazy" width="864" height="446">
+      <figcaption><span class="tag keep">לשמור</span>גרסה 2: הגדר הגבוהה בטקסטורה.<span class="when">זום 25:50</span></figcaption>
+    </figure>
+    <figure>
+      <img src="images/v2-sea.jpg" alt="גרסה 2: הים הכהה והספינות במרווחים, מבט מלמעלה" loading="lazy" width="864" height="446">
+      <figcaption><span class="tag keep">לשמור</span>גרסה 2: הים, והמרחבים בין הספינות.<span class="when">זום 26:00</span></figcaption>
+    </figure>
+  </div>
+
+  <p class="sub">מגרסה 2 לא לוקחים:</p>
+  <ul>
+    <li><strong>הרחפנים שעפים אל המצלמה, עולים וחוזרים.</strong> "כאן יש מלא רחפנים באוויר... כל הסיבוב הזה שהוא בא אליי, עולה, חוזר, בוא נתעלה מזה, אנחנו הולכים לקודם: מסתובב, עוצר, מסתובב, עוצר" (17:22 עד 17:33). נדב הסביר שהוסיף תנועה כי חשש שהחלק הזה סטטי ומשעמם (הריבולבר של <bdi>Anduril</bdi>), והציע: נשאר בסגנון של גרסה 1, ואם צריך מוסיפים תנועת מצלמה (18:15 עד 18:20). צדק נשאר עם גרסה 1.</li>
+  </ul>
+  <figure>
+    <img src="images/v2-drones-air.jpg" alt="גרסה 2: פלטה על השטח עם רחפן, ופסי טקסט זמניים" loading="lazy" width="864" height="486">
+    <figcaption><span class="tag fix">לצאת</span>גרסה 2: הפלטה על השטח עם הרחפנים שעפים אליה וממנה. חוזרים לסיבוב ועצירה של גרסה 1.<span class="when">זום 19:38</span></figcaption>
+  </figure>
+</section>
+
+<section class="card" id="s3">
+  <h2>3. ההחלטות, לפי סדר הסרט</h2>
+
+  <h3 id="s3a">א'. הפלטה הבודדת והסיבוב</h3>
+  <ol start="1">
+    <li><strong>הסיבוב נעצר על כל רחפן.</strong> ההצעה של נדב (11:18 עד 11:50), וצדק: "מדהים, מדהים, מדהים". ניתן להוסיף לזה תנועת מצלמה עדינה, אם החלק הזה ירגיש סטטי (18:15). הרצף: הפלטה מסתובבת, רחפן מופיע, <strong>הפלטה נעצרת</strong>, נכנסים הנתונים, הנתונים נעלמים, הסיבוב ממשיך ומחליף רחפן. הנימוק של צדק: "אני לא מזהה שיש שם החלפה, וכשאתה עוצר אתה נותן קשב לצופה" (11:36 עד 11:45).</li>
+    <li><strong>המסגרת הכחולה סביב הפלטה יוצאת.</strong> "הריבוע מסביב, הכחול הזה, אני לא מתחבר אליו" (09:38).</li>
+    <li><strong>הכחול באמצע הפלטה קטן הרבה יותר.</strong> "הוא טיפה משתלט לנו על המשטח. זה צריך להיות נקודה קטנה כזאת" (09:53 עד 10:11). כלומר <strong>אינדיקציית טעינה קטנה, לא משטח זוהר.</strong> צדק אמר שזה נכון גם בעיצוב הצפחה (09:57). (הערה שלנו: בפריים <a href="#fig-s1">S1 של הצפחה</a> הזוהר באמצע גדול מדי, אז שם מתקנים.)</li>
+    <li><strong>הריבועים הכחולים ברקע</strong> (הפלטות הפזורות מסביב בגרסה 1): צדק "פחות" אוהב אותם (10:22 עד 10:30). מיד אחר כך נאמר "הם לא היו קיימים בכלל... ראיתי (כנראה: הורדתי) אותם מהסרטון האחרון" (10:35), כלומר כנראה כבר ירדו בגרסה 2. <strong>להוריד.</strong></li>
+    <li><strong>מודלים אמיתיים, לא פרוקסי.</strong> על הרחפן הזמני: "נראה איזה יצור... יש לכם מודלים טובים" (10:43 עד 10:48).</li>
+  </ol>
+  <figure>
+    <img src="images/v1-pad.jpg" alt="גרסה 1: פלטה שחורה עם מסגרת תכלת, ריבוע כחול גדול באמצע, רחפן זמני, פסים אפורים וריבועים כחולים ברקע" loading="lazy" width="972" height="524">
+    <figcaption><span class="tag fix">לתקן</span>גרסה 1: הפלטה הבודדת. המסגרת התכלת יוצאת, הכחול באמצע הופך לנקודה קטנה, הריבועים הכחולים ברקע יורדים, והרחפן הזמני מוחלף במודל אמיתי.<span class="when">ההערות: 09:38 עד 10:48</span></figcaption>
+  </figure>
+
+  <h3 id="s3b">ב'. 6 הפלטות</h3>
+  <ol start="6">
+    <li><strong>בלי מפרידים בין הפלטות.</strong> "כל הקטע שלנו ב-<bdi>XCurrent</bdi>: לא צריך נחיתה מדויקת. אתה יכול לנחות על שתי משבצות ביחד... ברגע שמתחברים הם הופכים להיות אחד. בגלל זה גם לא צריך ביניהם מפרידים" (12:42 עד 13:00).</li>
+    <li><strong>הרחפנים לא חייבים לשבת אחד בכל ריבוע.</strong> אפשר לפזר אותם על הפלטות, גם על שתי משבצות. לחזק את זה בכיתוב (13:01 עד 13:12).</li>
+    <li><strong>אם הכטב"ם (ה-<bdi>VTOL</bdi>) שחיים מביא יוצא גדול מדי על 6, מגדילים ל-3 על 3</strong> (9 פלטות) (12:20 עד 12:29). מותר להגדיל את המשטחים (12:37).</li>
+    <li>הסימונים בצבע על הפלטות כרגע הם רק סימון. הכל לפי העיצוב (11:56 עד 12:03).</li>
+  </ol>
+  <figure>
+    <img src="images/v1-six-pads.jpg" alt="גרסה 1: שש פלטות מחוברות עם מפרידי תכלת ביניהן, רחפן אחד בכל ריבוע וכטב&quot;ם גדול" loading="lazy" width="972" height="524">
+    <figcaption><span class="tag fix">לתקן</span>גרסה 1: 6 הפלטות. המפרידים בין הפלטות יוצאים, והרחפנים לא חייבים לשבת אחד בכל ריבוע.<span class="when">ההערות: 12:20 עד 13:12</span></figcaption>
+  </figure>
+
+  <h3 id="s3c">ג'. הנסיגה ממערך הפלטות (מבנה חדש, צדק)</h3>
+  <ol start="10">
+    <li><strong>במקום טילט אפ מהפלטה: נסיגה אחורה שמראה את כל התחנות לאורך הגבול, ורק אז המראה.</strong> "למה לא עכשיו אנחנו מראים את כל התחנות פרוסות... ואז ממריאים?" (19:50 עד 20:06). "סופר לונג שוט, חוזרים אחורה, כמעט מבט על מהצד" (20:59).</li>
+    <li><strong>בנסיגה בונים את הקווים בין התחנות, "טיק טיק טיק".</strong> "באנדוריל הם מותחים לנו קווים ומראים לנו מה קורה שם... לבנות את הקו הזה שנמתח בין כולם, ואז להמריא" (21:20 עד 21:35).</li>
+    <li><strong>עצירה עם נתונים.</strong> "העיקרון המרכזי זה שעוצרים ונותנים נתונים" (21:56 עד 22:01). בנקודה הזאת: מרחקים, ו-3 עד 4 מילים או חצי משפט (22:24 עד 22:51). צדק נתן <strong>דוגמאות בלבד, לא נוסח סופי</strong>: "רחפנים טעונים, רחפנים זמינים", "<bdi>different system</bdi>". "לא יודע, אני אחשוב... זה לא חייב עכשיו" (22:43).</li>
+    <li><strong>איך חוזרים מהנסיגה להמראה (שתי אפשרויות, שתיהן אושרו, ההחלטה שלנו):</strong>
+      <ul>
+        <li><strong>אפשרות א' (כנראה של איתן, לפי ההקשר):</strong> בדולי האחורה נחשפת בפורגראונד עוד פלטה, והרחפן ממריא ממנה, כך שלא צריך לחזור פנימה (24:52 עד 25:12).</li>
+        <li><strong>אפשרות ב':</strong> חוזרים פנימה לתחנה אחרת שממנה ממריא רחפן אחר (21:36, הדובר לא ודאי), או לרחפן שיוצא, עוקבים אחריו ועושים את ה-120 לכיוון הים (22:08 עד 22:15).</li>
+        <li>צדק על אפשרות א': "מדהים, <strong>גם</strong> עובד מבחינתי. <strong>אבל הקווים חייבים להיות ביניהם</strong>" (25:13 עד 25:16). כלומר שתיהן בסדר מבחינתו, בתנאי שהקווים בין התחנות נבנים.</li>
+        <li><strong>ההמלצה שלנו: אפשרות א'</strong>, כי היא שומרת על שוט אחד בלי חזרה פנימה.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h3 id="s3d">ד'. המרחקים והעולם</h3>
+  <ol start="14">
+    <li><strong>הכל רחוק יותר.</strong> "המשטחים מאוד מאוד קרובים בעין... גם אם זה באמת שמונה קילומטר, לבן אדם זה נראה ממש קרוב" (13:27 עד 13:47). "אנחנו מדברים על תשתית, משהו רחב וגדול, לא צמוד" (26:21 עד 26:26).</li>
+    <li><strong>הפתרון למרחק: קו לבן בין המשטחים עם כיתוב קילומטרים</strong> (או מייל), אולי עם חץ (13:48 עד 14:03, הדובר לא ודאי). נדב: בבלנדר 8 ק"מ אמיתיים הופכים את הפלטה לנמלה, אז מזייפים את המרחק בתמונה ומעבירים אותו כנתון (14:10 עד 14:27).</li>
+  </ol>
+  <figure>
+    <img src="images/v1-hills-close.jpg" alt="גרסה 1: גבעה עגולה ומאחוריה גדר, הפלטה צמודה בתחתית הפריים" loading="lazy" width="972" height="524">
+    <figcaption><span class="tag fix">לתקן</span>גרסה 1: הפלטה, ההרים והגדר צמודים מדי. ההרים כאן רק גלים, ובעיצוב הם מעוצבים יותר (סעיף 18).<span class="when">ההערות: 13:27 עד 14:35</span></figcaption>
+  </figure>
+  <ol start="16">
+    <li><strong>הרכבים (שליד הגדר) רחוקים מהמשטחים.</strong> "הרכבים יכולים להיות בכלל רחוקים מהמשטחים על הגדר... אני לא רוצה שהכל יהיה צפוף" (26:27 עד 26:36). גם "להרחיק את היחידות האחוריות מהשביל" (15:07).</li>
+    <li><strong>הספינות רחוקות זו מזו.</strong> "יש לי ארבע, חמש סירות... הן ממש צמודות, כמעט נוגעות" (16:59 עד 17:10). וגם הספינות רחוקות יותר, כנראה (14:57, ו-25:30 בזמן שגרסה 2 הייתה על הים: "יותר רחוקות... כן כן כן").</li>
+    <li><strong>ההרים מעוצבים יותר</strong>, לא רק גלים (14:28). לפי העיצוב (14:35).</li>
+  </ol>
+  <figure>
+    <img src="images/v1-apc.jpg" alt="גרסה 1: נגמ&quot;ש לבן ליד הגדר, מתחת להרים הגליים, ומשטחים כחולים מאחורי ההרים" loading="lazy" width="972" height="524">
+    <figcaption><span class="tag fix">לתקן</span>גרסה 1: הנגמ"ש ליד הגדר וההרים. הרכבים מתרחקים מהמשטחים כדי שלא יהיה צפוף, וההרים מקבלים עיצוב.<span class="when">ההערות: 14:28, 15:07, 26:27</span></figcaption>
+  </figure>
+  <ol start="19">
+    <li><strong>העמודים של התחנות: לבנים, לא זוהרים.</strong> "עדיף שהם יהיו לבנים ולא זוהרים כאלה" (15:32). נדב: אפשר גם שלא יראו אותם בכלל (15:28).</li>
+    <li><strong>סגנון הקווים:</strong> קווים עדינים, נקיים, שמחברים הכל, כמו ב-<bdi>Anduril</bdi> (15:46 עד 15:54). על פריים העולם בעיצוב הצפחה (<a href="#fig-s3">S3</a>, הקווים שעולים לשמיים): "אני אוהב את הקווים האלה" אבל "לא אוהב את האורות האלה" (16:24 עד 16:29, לא ודאי מי אמר). כלומר הקווים נשארים, הזוהר הכחול של העמודים יורד, בהתאם לסעיף 19.</li>
+  </ol>
+  <figure>
+    <img src="images/v1-pillars.jpg" alt="גרסה 1: עמודי תכלת זוהרים שעולים מהמשטחים לאורך הגדר" loading="lazy" width="972" height="524">
+    <figcaption><span class="tag fix">לתקן</span>גרסה 1: עמודי התחנות בתכלת זוהר. העמודים הופכים ללבנים ולא זוהרים, או שלא רואים אותם בכלל.<span class="when">ההערות: 15:28 עד 15:32</span></figcaption>
+  </figure>
+  <ol start="21">
+    <li><strong>הנגמ"ש בגרסה 2</strong> הוא פרוקסי לנוחות העין. בעיצוב האמיתי משתמשים במודל האמיתי (25:50 עד 26:06).</li>
+    <li>נדב הסביר את סוף גרסה 2: אנחנו בצד שלנו ומסתכלים מהשטח שלנו, לא מצד האויב, ולכן לא רואים את הפלטות שמאחורי ההרים. העמודים = הפלטות = תחנות הדלק (26:37 עד 27:33).</li>
+  </ol>
+
+  <h3 id="s3e">ה'. התרחישים: הים, ה-<bdi>UGV</bdi>, הנגמ"ש (סדר חדש)</h3>
+  <ol start="23">
+    <li><strong>הים:</strong> רואים משהו ממריא מהספינה. "אנחנו לא יודעים לאן הוא טס... הוא באוויר, משוטט לו". עוקבים אחריו קצת, ואז יורדים ל-<bdi>UGV</bdi> (28:51 עד 29:08).</li>
+  </ol>
+  <figure>
+    <img src="images/v1-sea.jpg" alt="גרסה 1: ספינה על ים כהה ליד קו החוף, מבט מלמעלה" loading="lazy" width="972" height="524">
+    <figcaption><span class="tag ref">רפרנס</span>גרסה 1: הספינה ליד החוף. מכאן משהו ממריא, משוטט, ועוקבים אחריו קצת.<span class="when">ההערה: 28:51 עד 29:08</span></figcaption>
+  </figure>
+  <ol start="24">
+    <li><strong>ה-<bdi>UGV</bdi> לפני הנגמ"ש, ומקבל רגע משלו.</strong> "צריך לתת לו גם את הרגע. <strong>הוא אפילו יותר חשוב מהנגמ"ש</strong>... תתחיל איתו לפני הנגמ"ש" (27:42 עד 27:55).</li>
+    <li><strong>מה יש ב-<bdi>UGV</bdi> (צדק):</strong> שתי קופסאות, לפי התמונות ששלח. <strong>באחת רחפן <bdi>EVO</bdi> גדול. בשנייה ארבעה רחפנים טקטיים קטנים ועגולים</strong> (ארבע "סלסלות"), מהסוג שנכנס לבתים. "יש לכם את המודל" של הקטנים (28:05 עד 28:13, 29:43 עד 30:00). "סקייל לא חשוב, לא נכנסים לתוך בתים", רק מראים את האפשרות (30:01). את סדר הפתיחה צדק השאיר לנו ("תחליט אתה", 29:16 עד 29:35), ואז סוכם הסדר שבסעיף 26.</li>
+  </ol>
+  <div class="pair">
+    <figure>
+      <img src="images/ugv-photo-1.jpg" alt="התמונה של צדק: UGV עם שתי קופסאות פתוחות, באחת רחפן ובשנייה ארבעה רחפנים קטנים" loading="lazy" width="1200" height="746">
+      <figcaption><span class="tag ref">רפרנס</span>התמונה של ה-<bdi>UGV</bdi> מהוואטסאפ של צדק, כפי שהוצגה בזום: שתי הקופסאות, וארבע ה"סלסלות" של הרחפנים הקטנים.<span class="when">זום 32:05</span></figcaption>
+    </figure>
+    <figure>
+      <img src="images/ugv-photo-2.jpg" alt="תמונה נוספת של אותו UGV בקו לבן, עם שתי הקופסאות פתוחות" loading="lazy" width="978" height="628">
+      <figcaption><span class="tag ref">רפרנס</span>אותו <bdi>UGV</bdi> בתמונה נוספת מאותה שיחה בוואטסאפ, כפי שהוצגה בזום.<span class="when">זום 31:40</span></figcaption>
+    </figure>
+  </div>
+  <ol start="26">
+    <li><strong>תנועת המצלמה על ה-<bdi>UGV</bdi> (סוכם):</strong> מגיעים מול הקופסה של ה-<bdi>EVO</bdi>, היא נפתחת, ה-<bdi>EVO</bdi> יוצא וטס (אפשר לסגור את הקופסה או להשאיר פתוחה). ממשיכים בתנועה של <strong>45 מעלות</strong> לקופסה השנייה, <strong>שנפתחת תוך כדי התנועה</strong>, ויוצאים ממנה הרחפנים הקטנים, אחד אחרי השני (32:02 עד 32:15). נדב הציע קודם 180 מעלות גב מול גב, צדק: "שתיהן פרונטליות, רק צריך דולי" (30:34 עד 30:52), ולכן 45.</li>
+    <li><strong>הנגמ"ש אחרון ורחוק יותר.</strong> "רק אז נלך שנייה לנגמ"ש, שהוא בכלל יותר רחוק" (30:07). <strong>בלי המראה ונחיתה עליו</strong>: "אל תמריאו... זה כבר יותר מדי. נראה שם איזה אור קטן" (30:13 עד 30:17). "אם רוצים להראות את ה-<bdi>infrastructure</bdi>, בהמשך שם רחוק... נגמ"ש נושא ברחוב, יש לו גם משטח, וזהו, כאן מסיימים" (32:16 עד 32:26). כנראה זה המקום לכיתוב בסגנון <code>same energy infrastructure</code> מה-25.10. <strong>בפועל זה מוריד את תרחיש ה-<bdi>EVO</bdi> שנוחת על הנגמ"ש בנסיעה מה-25.10.</strong> נדב הציע רחפן עם סוללה ריקה שנוחת על הנגמ"ש (27:56, 28:44), צדק עצר ("שנייה, שנייה... עוד פעם", 28:48), סידר מחדש את הסדר ואמר "אל תמריאו". הוא לא אמר במפורש "בלי נחיתה", אבל זה הכיוון.</li>
+    <li><strong>תמונה של ה-<bdi>UGV</bdi> עם שתי הקופסאות</strong> הוצגה בזום מהוואטסאפ של צדק. הוצע שישלח טובה יותר, ונאמר "זה מספיק טוב, זה מספיק טוב, הבנו" (31:44 עד 31:49). כלומר תמונה נוספת היא רשות, לא חובה.</li>
+  </ol>
+  <figure>
+    <img src="images/v2-apc-ugv.jpg" alt="גרסה 2: נגמ&quot;ש פרוקסי בקו לבן ו-UGV קטן על כביש רשת ליד הגדר" loading="lazy" width="864" height="486">
+    <figcaption><span class="tag fix">לתקן</span>גרסה 2: הנגמ"ש (פרוקסי) וה-<bdi>UGV</bdi> הקטן על כביש הרשת ליד הגדר. בסדר החדש ה-<bdi>UGV</bdi> מקבל רגע משלו קודם, והנגמ"ש אחרון, רחוק יותר ובמודל האמיתי.<span class="when">זום 28:20</span></figcaption>
+  </figure>
+
+  <h3 id="s3f">ו'. הסיום</h3>
+  <ol start="29">
+    <li><strong>לפני הטופ שוט: החלון בצד</strong> (כמו בגרסה 2), שמראה את יחידת הפלטות המחוברת, <strong>בלי רחפן</strong>. "קונקשן, <bdi>all of them</bdi>... בלי רחפן" (33:31 עד 33:45).</li>
+    <li><strong>הטופ שוט: רק מרחקים.</strong> קווים בין כל הנקודות. "רק מרחקים, זה חשוב" (33:51). אין קו מסלול של רחפן מנקודה לנקודה (שעלה ב-25.10).</li>
+    <li><strong>ואז "<bdi>XCurrent</bdi>" וזה סוף הסרטון</strong> (33:53 עד 33:58).</li>
+    <li>השאלה אם בסוף כל הרחפנים נוחתים, ואיך בדיוק מחברים בקווים: "מה שתחליטו" (32:28 עד 32:32).</li>
+  </ol>
+  <figure>
+    <img src="images/v2-ending.jpg" alt="גרסה 2: מבט על עם קווים כחולים בין הנקודות, ים עם ספינות, וחלון בצד שמראה את יחידת הפלטות עם רחפן עליה" loading="lazy" width="864" height="486">
+    <figcaption><span class="tag keep">לשמור</span><span class="tag fix">לתקן</span>גרסה 2: הסיום. החלון בצד נשאר, אבל <strong>בלי הרחפן</strong> שעליו. בטופ שוט: קווים ומרחקים בלבד.<span class="when">זום 33:50</span></figcaption>
+  </figure>
+</section>
+
+<section class="card" id="s4">
+  <h2>4. המבנה המעודכן, שוט אחד רציף</h2>
+  <p class="scrollhint">הטבלה רחבה, אפשר לגלול אותה לצדדים.</p>
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr><th>ביט</th><th>מה קורה</th><th>עצירה לנתון</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="beat">א</td><td>פתיח. פלטה בודדת באוויר מעל השטח (גרסה 1). מסתובבת, נעצרת על כל רחפן, ממשיכה ומחליפה</td><td class="stop">כן, על כל רחפן</td></tr>
+        <tr><td class="beat">ב</td><td>5 פלטות מתחברות, בלי מפרידים. כמה רחפנים שונים יחד, גם על שתי משבצות. כטב"ם גדול (3x3 אם צריך)</td><td class="stop">כן: מודולריות, "לא צריך נחיתה מדויקת"</td></tr>
+        <tr><td class="beat">ג</td><td>נסיגה ארוכה לאחור עד כמעט מבט על מהצד. כל התחנות לאורך הגבול, הקווים ביניהן נבנים "טיק טיק טיק", עם מרחקים</td><td class="stop">כן: מרחקים + 3-4 מילים (למשל "רחפנים טעונים, זמינים", לא סופי)</td></tr>
+        <tr><td class="beat">ד</td><td>ההמלצה שלנו (צדק אישר את שתי האפשרויות): בדולי האחורה נחשפת פלטה בפורגראונד ורחפן ממריא ממנה. ה-120 לכיוון הים</td><td class="stop"></td></tr>
+        <tr><td class="beat">ה</td><td>הים: משהו ממריא מספינה (ספינות מרווחות), טס ומשוטט, עוקבים קצת</td><td class="stop"></td></tr>
+        <tr><td class="beat">ו</td><td>יורדים ל-<bdi>UGV</bdi>: קופסת <bdi>EVO</bdi> נפתחת, <bdi>EVO</bdi> טס. 45 מעלות לקופסה השנייה, נפתחת, 4 קטנים יוצאים</td><td class="stop">כנראה</td></tr>
+        <tr><td class="beat">ז</td><td>נגמ"ש רחוק עם משטח, ואור קטן עליו. בלי המראה ונחיתה</td><td class="stop">כנראה: <code>same energy infrastructure</code></td></tr>
+        <tr><td class="beat">ח</td><td>חלון בצד: יחידת הפלטות המחוברת, בלי רחפן. טופ שוט עם קווים ומרחקים בלבד</td><td class="stop">כן: מרחקים</td></tr>
+        <tr><td class="beat">ט</td><td>"<bdi>XCurrent</bdi>". סוף</td><td class="stop"></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card" id="s5">
+  <h2>5. העיצוב: "צפחה לילית" (<bdi>D2 Midnight Slate</bdi>)</h2>
+  <ul>
+    <li><strong>העיצוב שנבחר הוא "צפחה לילית"</strong> מדף העיצובים של 26.10 (<bdi>D2</bdi>). צדק פתח אותו בזום. מהצד שלנו נשאל "אתה רואה שם את הפלטה? ככה זה ייראה", וצדק: "סבבה, קצת לבן בצדדים, אבל כן, זה יותר הגיוני" (09:00 עד 09:12). בסוף נאמר "הצפחה שלך מדהימה" (36:13, הדובר לא ודאי).</li>
+    <li><strong>ההחלטה על הצפחה עכשיו, לא אחר כך.</strong> צדק הציע להוסיף את הטקסט מאוחר יותר ("מלל, אחר כך נוסיף", 34:07), ונדב: "אנחנו נעשה את המלל עכשיו בעיצוב" (34:10).</li>
+    <li><strong>רקע שחור.</strong> נדב: "זה מבדיל אותך מהסרטון שאנחנו מבססים עליו (<bdi>Anduril</bdi>), זה יותר מקורי, הכל שחור מסביב ויש לך משהו לבן, העין נמשכת לזה אוטומטית" (09:18 עד 09:32). צדק: "מדהים".</li>
+    <li><strong>מה לתקן בעיצוב:</strong> הזוהר הכחול באמצע הפלטה קטן לנקודה (סעיף 3), בלי מסגרת כחולה סביב הפלטה, עמודי התחנות לבנים ולא זוהרים, הקווים העדינים נשארים.</li>
+    <li>נדב הבהיר לצדק שוב שהשלד הוא "כמו לראות מישהו עירום, והבגדים זה העיצוב". המשטח השחור והתכלת בשלד הם רק כדי לרנדר מהר (08:02 עד 08:33).</li>
+  </ul>
+  <figure id="fig-s1">
+    <img src="images/d2-s1.jpg" alt="צפחה לילית S1: פלטה בודדת בקו לבן עם רחפן וזוהר תכלת גדול באמצע" loading="lazy" width="1200" height="676">
+    <figcaption><span class="tag keep">לשמור</span><span class="tag fix">לתקן</span>צפחה לילית, <bdi>S1</bdi>: העיצוב שנבחר. הזוהר באמצע הפלטה גדול מדי, צריך לקטון לנקודה (סעיף 3).<span class="when">ההערה: 09:53 עד 10:11</span></figcaption>
+  </figure>
+  <figure id="fig-s2">
+    <img src="images/d2-s2.jpg" alt="צפחה לילית S2: מערך 3 על 2 פלטות בקו לבן עם רחפנים" loading="lazy" width="1200" height="676">
+    <figcaption><span class="tag keep">לשמור</span>צפחה לילית, <bdi>S2</bdi>: מערך הפלטות בעיצוב שנבחר.<span class="when">דף העיצובים, 26.10</span></figcaption>
+  </figure>
+  <figure id="fig-s3">
+    <img src="images/d2-s3.jpg" alt="צפחה לילית S3: עולם הגבול עם קווים לבנים בין התחנות, מרחקים ועמודי אור תכלת" loading="lazy" width="1200" height="676">
+    <figcaption><span class="tag keep">לשמור</span><span class="tag fix">לתקן</span>צפחה לילית, <bdi>S3</bdi>: הקווים העדינים נשארים. הזוהר הכחול של העמודים יורד (סעיפים 19 ו-20).<span class="when">ההערה: 16:24 עד 16:29</span></figcaption>
+  </figure>
+</section>
+
+<section class="card" id="s6">
+  <h2>6. טקסט, קול ומוזיקה</h2>
+  <ul>
+    <li><strong>אין קריינות בכלל.</strong> "לא יהיה קול, לא יהיה קול בכלל" (13:18). הקריינות בגרסה 1 הייתה זמנית בלבד. <strong>כל המידע עובר בטקסט על המסך.</strong></li>
+    <li><strong>יש מוזיקה.</strong> בוחרים בשלב האחרון, אחרי הווידאו. המוזיקה בשלד זמנית, ואולי ניקח מצדק רפרנס לסגנון. צריך זמינות של צדק וחיים לזה (37:07 עד 37:32).</li>
+    <li><strong>הטקסט מתחיל ב-"<bdi>energy infrastructure</bdi>" ובמה שמבדיל אותם</strong>, כמה משפטים שהצופה יבין. ושם עוצרים (צדק, 24:37 עד 24:44).</li>
+    <li><strong>"כל האינפורמציה שתקבל עכשיו, צדק, זו האינפורמציה שתהיה בסרט. לא יהיה כיתוב נוסף. אם חסר משהו, תעיר על זה מתוך העיצובים"</strong> (נדב, 36:54 עד 37:04).</li>
+  </ul>
+</section>
+
+<section class="card" id="s7">
+  <h2>7. סדר העבודה שסוכם</h2>
+  <p class="note">נדב, 23:00 עד 24:32, 34:12 עד 34:34, 36:22 עד 36:52</p>
+  <ol>
+    <li><strong>לסמן את כל נקודות העצירה</strong> בסרט, ואיזה נתון נכנס בכל אחת.</li>
+    <li><strong>פריימי עיצוב בצפחה לילית עם הטקסט</strong> בכל נקודת עצירה, ובתנועות המצלמה.</li>
+    <li><strong>צדק מאשר</strong> את הטקסט ואת העיצוב בנקודות האלה. "ככה צדק מעורב ויודע בדיוק מה הוא הולך לקבל" (24:32).</li>
+    <li><strong>במקביל מתקנים את הווידאו</strong> לפי ההערות כאן (לא חוזרים לסבב שלד נוסף).</li>
+    <li><strong>רינדור אחד</strong>, כי זה שוט אחד. אולי בחלקים. איך מרנדרים (ומה הצינור) עוד צריך להחליט (36:31 עד 36:43).</li>
+    <li>נדב העלה אפשרות לשלב טקסטורות ב-<bdi>AI</bdi> אחרי בלנדר, ושהנתונים צריכים להיכנס לפני השלב הזה (23:35 עד 23:39, לא ודאי). את ההאטות אפשר לעשות ב-<bdi>slow motion</bdi> בעריכה ולהחליק עם <bdi>AI</bdi> (23:27).</li>
+  </ol>
+</section>
+
+<section class="card" id="s8">
+  <h2>8. לוח זמנים</h2>
+  <ul>
+    <li><strong>נדב טס ביום ראשון (1.11) למשפחה</strong>, יהיה זמין. איתן "פול און" (37:37 עד 37:44). "לסגור את זה כמה שיותר מהר בימים הקרובים".</li>
+    <li><strong>צדק: זמין "גם בשבת, בכל רגע"</strong> (37:50).</li>
+  </ul>
+</section>
+
+<section class="card" id="s9">
+  <h2>9. פתוח, לברר</h2>
+  <ol>
+    <li><strong>ה-<bdi>UGV</bdi>:</strong> לוודא שיש לנו מודל של 4 הרחפנים הקטנים ושל ה-<bdi>UGV</bdi> עם שתי הקופסאות. תמונה נוספת מצדק היא רשות (נאמר שהקיימת מספיקה).</li>
+    <li><strong>הכטב"ם מחיים:</strong> מה הגודל, והאם 6 פלטות או 3 על 3.</li>
+    <li><strong>ביט ד':</strong> פלטה שנחשפת בפורגראונד מול חזרה פנימה לתחנה אחרת. צדק אישר את שתיהן, ההחלטה שלנו. ההמלצה: הפלטה בפורגראונד.</li>
+    <li><strong>קליפ ישן לדוגמה:</strong> מישהו הציע לשלוח קליפ קודם שמראה סגנון החלפה, "תגיד לי אם זה יותר הכיוון" (18:47 עד 18:58). לא ברור מי ואם נשלח.</li>
+    <li><strong>הטקסט עצמו</strong> בכל נקודת עצירה: הניסוח הוא שלנו, ונשלח לאישור צדק בפריימי העיצוב. שמות הבולטים מה-25.10 (<bdi>Communication</bdi>, <bdi>Modularity</bdi>) עדיין רלוונטיים.</li>
+    <li><strong>הסיום:</strong> האם כל הרחפנים נוחתים בסוף. "מה שתחליטו".</li>
+  </ol>
+</section>
+
+<section class="card" id="s10">
+  <h2>10. לא קשור לסרט (לידיעה)</h2>
+  <ul>
+    <li>בסוף הזום צדק אמר שמישהו בשם "דביבו" (לפי התמלול), "החבר מברצלונה", לגבי האתר, קצת התבאס, ושאדסי (לפי התמלול) לקחה אצלם את הצעות המחיר. הצד השני אמר שאינו מכיר מישהו בשם הזה. אחר כך נשמע "סליחה, סליחה, סליחה... המעצבים שלנו, ירון..." (35:52), כנראה צדק הבין שהתבלבל בין אנשים. התמלול כאן משובש ולא ברור מי דיבר עם מי (34:46 עד 36:00). לבדוק עם נדב אם זה רלוונטי.</li>
+  </ul>
+</section>
+
+<footer>New Angle · <bdi>XCurrent</bdi> · הערות זום 27.10.26 · <a href="notes-for-claude.md">קובץ לקלוד (md)</a></footer>
+</main>
+</body>
+</html>
