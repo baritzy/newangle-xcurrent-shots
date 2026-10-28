@@ -12,132 +12,85 @@
 <link rel="stylesheet" href="sb.css">
 <link rel="stylesheet" href="print.css" media="print">
 </head>
-<body>
+<body class="client">
 
-<header class="hero" id="top">
+<header class="hero c-hero" id="top">
   <div class="wrap">
-    <div class="kicker"><span>NEW ANGLE</span><i>/</i><span>XCURRENT</span><i>/</i><span>BORDER FILM</span><i>/</i><span>STORYBOARD</span></div>
-    <h1><span class="en">XCurrent</span><span class="sep">·</span>סרטון הגבול<span class="sub">סטוריבורד לאישור</span></h1>
-    <div class="datebar"><span><i class="dot"></i><b>28.10.26</b></span><span>1:33</span><span>D2 · צפחה לילית</span></div>
-    <div class="intro">
-      <p>זה העיצוב (D2, צפחה לילית) על השלד הנוכחי של הסרט (1:33), עם <b>כל</b> הטקסט שיופיע על המסך.</p>
-      <p>אין קריינות: הטקסט נושא את כל המידע. סוגריים כמו <code>[XX V]</code> הם מספרים שנצטרך ממך, ו-<code>[לאישור]</code> בתרגום מסמן ניסוח שמחכה לאישורך.</p>
-      <p>אנחנו מבקשים שני אישורים נפרדים:</p>
-    </div>
-    <div class="approvals">
-      <div class="appr"><i class="cn tl"></i><i class="cn br"></i>
-        <div class="tag">א · DESIGN</div>
-        <h3>העיצוב והמראה</h3>
-        <p>הלוק, הטיפוגרפיה, הקווים והתנועה. מערכת הטקסט מוסברת בקצרה בסעיף הבא.</p>
-      </div>
-      <div class="appr key"><i class="cn tl"></i><i class="cn br"></i>
-        <div class="tag">ב · CONTENT</div>
-        <h3>התוכן: כל מילה על המסך <span class="most">זה הכי חשוב</span></h3>
-        <p>בכל רגע טקסט מופיע הנוסח באנגלית בדיוק כמו בפריים, ותרגום לעברית מתחתיו. בסוף הדף יש שאלות תוכן ממוספרות.</p>
-      </div>
-    </div>
-    <div class="stats" id="stats"></div>
+    <div class="kicker"><span>NEW ANGLE</span><i>/</i><span>XCURRENT</span></div>
+    <h1><span class="en">XCurrent</span><span class="sep">·</span>סרטון הגבול<span class="sep">·</span><span class="lite">סטוריבורד</span></h1>
+    <div class="datebar"><span><i class="dot"></i><b>28.10.26</b></span><span>1:33</span></div>
+    <p class="c-lead">עיצוב צפחה לילית על השלד הנוכחי, עם כל הטקסט שעל המסך. מבקשים אישור לעיצוב ולטקסט.</p>
+    <p class="c-note"><mark class="ph">[XX V]</mark> = מספרים שנצטרך ממך.</p>
   </div>
 </header>
 
 <nav class="nav" aria-label="ניווט"><div class="wrap" id="nav"></div></nav>
 
 <main>
-  <section class="sec" id="system">
+  <section class="sec c-sec" id="system">
     <div class="wrap">
-      <div class="sec-head"><span class="num">01</span><h2>מערכת הטקסט</h2>
-        <p>כל הטקסט בסרט בנוי מאותם חמישה סגנונות, שני צבעים ושלושה סוגי קווים. אותה תנועה בכל רגע.</p></div>
-      <div class="sys">
-        <div class="card"><i class="cn tl"></i><i class="cn tr"></i><i class="cn bl"></i><i class="cn br"></i>
-          <h3 class="lbl">גדלים <span class="en">PX AT 1080P</span></h3>
-          <ul class="scale">
-            <li><div class="smp t-h1">ANY DRONE. ANY VOLTAGE.</div><span class="meta">H1 · כותרת אחת לפריים · Barlow Condensed SemiBold</span><span class="px">76</span></li>
-            <li><div class="smp t-h2">SAME ENERGY INFRASTRUCTURE</div><span class="meta">H2 · כותרת משנית · Barlow Condensed SemiBold</span><span class="px">48</span></li>
-            <li><div class="smp"><span class="t-stat">8</span><span class="t-unit">KM</span></div><span class="meta">STAT · מספר גדול, עם יחידה במונו</span><span class="px">84 / 26</span></li>
-            <li><div class="smp t-data">AUTO-DETECT · AUTO-MATCH · ANY ORIENTATION</div><span class="meta">DATA · שורות נתונים · IBM Plex Mono Medium</span><span class="px">22</span></li>
-            <li><div class="smp t-label">XPAD FLEX 100</div><span class="meta">LABEL · תוויות, קווי הפניה, מרחקים · IBM Plex Mono Medium</span><span class="px">20</span></li>
+      <div class="sec-head"><span class="num">01</span><h2>מערכת הטקסט</h2></div>
+      <div class="tsys">
+        <div class="card ts-type"><i class="cn tl"></i><i class="cn br"></i>
+          <div class="ts-smp" lang="en">
+            <div class="ts-h">ANY DRONE. ANY VOLTAGE.</div>
+            <div class="ts-rule"></div>
+            <div class="ts-d">AUTO-DETECT · AUTO-MATCH</div>
+            <div class="ts-c"><span class="ldr"></span>XPAD FLEX 100</div>
+          </div>
+          <ul class="ts-legend">
+            <li><b>כותרות</b> Barlow Condensed</li>
+            <li><b>נתונים ותוויות</b> IBM Plex Mono</li>
           </ul>
         </div>
-        <div class="card"><i class="cn tl"></i><i class="cn tr"></i><i class="cn bl"></i><i class="cn br"></i>
-          <h3 class="lbl">צבעים <span class="en">COLOUR</span></h3>
-          <div class="swatches">
-            <div class="sw"><i style="background:#1b2531"></i><div>צפחה לילית: העולם<br><code>#1B2531</code></div></div>
-            <div class="sw"><i style="background:#0d131a"></i><div>עומק: צללים וסיום<br><code>#0D131A</code></div></div>
-            <div class="sw"><i style="background:#ffffff"></i><div>לבן: כותרות ותוויות<br><code>#FFFFFF</code></div></div>
-            <div class="sw"><i style="background:#dff2ff"></i><div>לבן קר: קווים ונתונים<br><code>#DFF2FF</code></div></div>
-            <div class="sw energy"><i style="background:#3fd8ff"></i><div>תכלת אנרגיה: רק נקודת הטעינה. אף פעם לא טקסט<br><code>#3FD8FF</code></div></div>
-          </div>
-          <h3 class="lbl">קווים <span class="en">LINES</span></h3>
-          <div class="lines">
-            <figure>
-              <svg viewBox="0 0 240 110" aria-hidden="true"><g fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="1.5"><path d="M40 82 L110 32 H228"/></g><circle cx="40" cy="82" r="9" fill="none" stroke="#fff" stroke-width="1"/><circle cx="40" cy="82" r="4" fill="#3fd8ff"/><text x="114" y="24" fill="#fff" font-family="IBM Plex Mono" font-weight="500" font-size="11" letter-spacing="1.3">XPAD FLEX 100</text></svg>
-              <figcaption>קו הפניה: נקודה על האובייקט, קו דק, תווית במונו.</figcaption>
-            </figure>
-            <figure>
-              <svg viewBox="0 0 240 110" aria-hidden="true"><g stroke="#dff2ff" stroke-width="1.5"><line x1="26" y1="70" x2="214" y2="70"/><line x1="120" y1="70" x2="120" y2="60"/></g><g fill="#3fd8ff" stroke="#fff"><circle cx="26" cy="70" r="4"/><circle cx="214" cy="70" r="4"/></g><text x="120" y="50" text-anchor="middle" fill="#fff" font-family="IBM Plex Mono" font-weight="500" font-size="12" letter-spacing="1.4">8 KM</text><text x="26" y="96" text-anchor="middle" fill="#dff2ff" fill-opacity=".7" font-family="IBM Plex Mono" font-size="9" letter-spacing="1">STN 01</text><text x="214" y="96" text-anchor="middle" fill="#dff2ff" fill-opacity=".7" font-family="IBM Plex Mono" font-size="9" letter-spacing="1">STN 02</text></svg>
-              <figcaption>קו ק"מ: נמתח מתחנה לתחנה, המרחק באמצע.</figcaption>
-            </figure>
-            <figure>
-              <svg viewBox="0 0 240 110" aria-hidden="true"><rect x="60" y="22" width="120" height="66" fill="rgba(223,242,255,.05)" stroke="#fff" stroke-opacity=".35"/><g stroke="#fff" stroke-width="1.5"><path d="M53 22h14M60 15v14M173 22h14M180 15v14M53 88h14M60 81v14M173 88h14M180 81v14"/></g></svg>
-              <figcaption>סימני + בפינות: מסגור של משטח או של חלון.</figcaption>
-            </figure>
-          </div>
+        <div class="card ts-col"><i class="cn tl"></i><i class="cn br"></i>
+          <ul class="chips">
+            <li><i style="background:#1b2531"></i>צפחה לילית</li>
+            <li><i style="background:#0d131a"></i>עומק</li>
+            <li><i style="background:#ffffff"></i>לבן: טקסט</li>
+            <li><i style="background:#dff2ff"></i>לבן קר: קווים</li>
+            <li class="en-chip"><i style="background:#3fd8ff"></i>תכלת: רק נקודת הטעינה</li>
+          </ul>
         </div>
-      </div>
-      <div class="motion">
-        <div class="demo" id="demo" aria-label="הדגמת התנועה">
-          <svg viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <path id="d-lead" d="M420 262 L470 214 H600" fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="1.5"/>
-            <g id="d-anchor"><circle cx="420" cy="262" r="9" fill="none" stroke="#fff"/><circle cx="420" cy="262" r="4" fill="#3fd8ff"/></g>
-            <text id="d-lab" x="474" y="206" fill="#fff" font-family="IBM Plex Mono" font-weight="500" font-size="11" letter-spacing="1.3">XPAD FLEX 100</text>
-            <g id="d-km" stroke="#dff2ff" stroke-width="1.5" fill="none">
-              <line class="km" x1="50" y1="300" x2="150" y2="286"/><line class="km" x1="150" y1="286" x2="250" y2="300"/><line class="km" x1="250" y1="300" x2="350" y2="288"/>
-            </g>
-            <g id="d-nodes" fill="#3fd8ff" stroke="#fff"><circle cx="50" cy="300" r="3.5"/><circle cx="150" cy="286" r="3.5"/><circle cx="250" cy="300" r="3.5"/><circle cx="350" cy="288" r="3.5"/></g>
-            <g id="d-kml" fill="#fff" font-family="IBM Plex Mono" font-weight="500" font-size="10" letter-spacing="1.2" text-anchor="middle">
-              <text x="100" y="281">8 KM</text><text x="200" y="281">8 KM</text><text x="300" y="282">8 KM</text>
-            </g>
-            <path d="M560 300 l40 -12 l18 24 l-40 12 z" fill="rgba(223,242,255,.06)" stroke="#fff" stroke-opacity=".55"/>
-          </svg>
-          <div class="d-eye" id="d-eye">STOP 01 · XPAD</div>
-          <div class="d-h" id="d-h">ANY DRONE. ANY VOLTAGE.</div>
-          <div class="d-rule" id="d-rule"></div>
-          <div class="d-data" id="d-data"></div>
-          <div class="d-stat" id="d-stat"><b id="d-num">8</b><span>KM</span></div>
-          <button class="replay" id="replay" type="button">REPLAY</button>
-        </div>
-        <div class="card"><i class="cn tl"></i><i class="cn br"></i>
-          <h3 class="lbl">תנועה: אותו סדר בכל רגע טקסט <span class="en">MOTION</span></h3>
-          <ol class="steps-m">
-            <li><span>נקודת עוגן קופצת על האובייקט</span><span class="tm">0.15s</span></li>
-            <li><span>קו ההפניה נמתח מהעוגן החוצה</span><span class="tm">0.3s</span></li>
-            <li><span>כותרת עליונה קטנה נכנסת בפייד</span><span class="tm">0.2s</span></li>
-            <li><span>הכותרת נחשפת משמאל לימין</span><span class="tm">0.35s</span></li>
-            <li><span>שורות הנתונים מוקלדות במונו</span><span class="tm">~0.02s / תו</span></li>
-            <li><span>מספרים סופרים עד הערך</span><span class="tm">0.6s</span></li>
-            <li><span>קווי ק"מ נמתחים מנקודה לנקודה, "טיק טיק טיק", והמרחק קופץ באמצע הקו</span><span class="tm">0.25s / קו</span></li>
-            <li><span>החזקה: כמה שצריך כדי לקרוא (מצוין בכל רגע)</span><span class="tm">HOLD</span></li>
-            <li><span>יציאה: הכל נעלם יחד, והקווים נאספים חזרה לעוגן</span><span class="tm">0.25s</span></li>
-            <li><span>המצלמה עומדת לגמרי בזמן ההחזקה, או זזה 2 עד 3 אחוזים לכל היותר</span><span class="tm">CAMERA</span></li>
-          </ol>
+        <div class="ts-motion">
+          <div class="demo" id="demo" aria-label="הדגמת התנועה">
+            <svg viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <path id="d-lead" d="M420 262 L470 214 H600" fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="1.5"/>
+              <g id="d-anchor"><circle cx="420" cy="262" r="9" fill="none" stroke="#fff"/><circle cx="420" cy="262" r="4" fill="#3fd8ff"/></g>
+              <text id="d-lab" x="474" y="206" fill="#fff" font-family="IBM Plex Mono" font-weight="500" font-size="11" letter-spacing="1.3">XPAD FLEX 100</text>
+              <g id="d-km" stroke="#dff2ff" stroke-width="1.5" fill="none">
+                <line class="km" x1="50" y1="300" x2="150" y2="286"/><line class="km" x1="150" y1="286" x2="250" y2="300"/><line class="km" x1="250" y1="300" x2="350" y2="288"/>
+              </g>
+              <g id="d-nodes" fill="#3fd8ff" stroke="#fff"><circle cx="50" cy="300" r="3.5"/><circle cx="150" cy="286" r="3.5"/><circle cx="250" cy="300" r="3.5"/><circle cx="350" cy="288" r="3.5"/></g>
+              <g id="d-kml" fill="#fff" font-family="IBM Plex Mono" font-weight="500" font-size="10" letter-spacing="1.2" text-anchor="middle">
+                <text x="100" y="281">8 KM</text><text x="200" y="281">8 KM</text><text x="300" y="282">8 KM</text>
+              </g>
+              <path d="M560 300 l40 -12 l18 24 l-40 12 z" fill="rgba(223,242,255,.06)" stroke="#fff" stroke-opacity=".55"/>
+            </svg>
+            <div class="d-eye" id="d-eye">STOP 01 · XPAD</div>
+            <div class="d-h" id="d-h">ANY DRONE. ANY VOLTAGE.</div>
+            <div class="d-rule" id="d-rule"></div>
+            <div class="d-data" id="d-data"></div>
+            <div class="d-stat" id="d-stat"><b id="d-num">8</b><span>KM</span></div>
+            <button class="replay" id="replay" type="button">REPLAY</button>
+          </div>
+          <p class="ts-gist">הטקסט נכנס בניגוב קצר, קווים נמתחים מהאובייקט, והכל יוצא יחד בדעיכה.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="sec" id="film">
+  <section class="sec c-sec" id="film">
     <div class="wrap">
-      <div class="sec-head"><span class="num">02</span><h2>הסרט, לפי הסדר</h2>
-        <p>רגעי הטקסט מוצגים בגדול. בין רגע לרגע, פריימי המעבר בקטן, כדי שאפשר יהיה לראות את זרימת השוט. לחיצה על פריים פותחת אותו בגודל מלא.</p></div>
+      <div class="sec-head"><span class="num">02</span><h2>הסרט, לפי הסדר</h2><span class="c-hint">לחיצה על פריים מגדילה</span></div>
+      <div id="beats"></div>
     </div>
-    <div class="wrap" id="beats"></div>
   </section>
 
-  <section class="sec" id="questions">
+  <section class="sec c-sec" id="questions">
     <div class="wrap">
-      <div class="sec-head"><span class="num">03</span><h2>שאלות תוכן אליך</h2>
-        <p>אפשר לענות לפי מספר. כל שאלה מקושרת לרגעים בסרט שהיא נוגעת בהם.</p></div>
-      <ol class="qs" id="qs"></ol>
+      <div class="sec-head"><span class="num">03</span><h2>שאלות אליך</h2><span class="c-hint">אפשר לענות לפי מספר</span></div>
+      <ol class="cq" id="qs"></ol>
     </div>
   </section>
 </main>
@@ -145,7 +98,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="brand">NEW ANGLE</div>
-    <p>XCurrent · סרטון הגבול · סטוריבורד לאישור · 28.10.26</p>
+    <p>XCurrent · סרטון הגבול · סטוריבורד · 28.10.26</p>
   </div>
 </footer>
 

@@ -1,70 +1,54 @@
-/* client page renderer: reads film-data.js + choices.json, shows only the chosen option per moment */
+/* client page renderer (simple, image-first): reads film-data.js + choices.json, shows only the chosen option per moment */
 (async function () {
   const F = window.FILM, SB = window.SB, $ = id => document.getElementById(id);
   const choices = await SB.loadChoices("choices.json");
-  const { beats } = SB.group();
 
-  // which moments touch each question (for back-links)
-  const qRefs = {};
-  Object.entries(F.moments).forEach(([tid, m]) => m.q.forEach(n => (qRefs[n] = qRefs[n] || []).push(tid)));
-
-  function momentHTML(it) {
-    const m = F.moments[it.tid], opt = choices[it.tid], o = m[opt], main = it.rows[0];
-    const cap = it.tid + " · " + SB.tc(main.t);
-    let h = '<article class="moment" id="m-' + it.tid + '">';
-    h += '<div class="m-head"><span class="m-id">' + it.tid + '</span><span class="m-tc">' + SB.tc(main.t) + "</span>" +
-      '<span class="m-sec"><b>' + o.sec.toFixed(1) + "</b>שניות על המסך</span>" +
-      (m.optional ? '<span class="m-opt">אופציונלי</span>' : "") +
-      '<span class="m-headline">' + SB.esc(SB.headline(o.lines)) + "</span></div>";
-    h += SB.img("", main.img[opt], { cap: cap, alt: "פריים " + cap });
-    if (it.rows.length > 1) {
-      h += '<div class="subframes">' + it.rows.slice(1).map(r =>
-        "<figure>" + SB.img("", r.img[opt], { thumbOnly: true, corners: false, cap: it.tid + " · " + SB.tc(r.t), alt: "פריים " + SB.tc(r.t) }) +
-        '<figcaption><span class="tcs">' + SB.tc(r.t) + "</span>" + SB.esc(r.cap) + "</figcaption></figure>").join("") + "</div>";
-    }
-    h += '<div class="m-body">';
-    h += '<div class="m-text"><h3 class="lbl">על המסך <span class="en">ON SCREEN</span></h3>' + SB.screen(o.lines) +
-      '<h3 class="lbl" style="margin-top:14px">תרגום</h3>' + SB.heLines(o.lines) + "</div>";
-    h += '<div class="m-shot"><h3 class="lbl">השוט</h3><p>' + SB.esc(main.shot) + '</p><h3 class="lbl">מצלמה</h3><p>' + SB.esc(main.cam) + "</p></div>";
-    h += '<div class="m-anim"><h3 class="lbl">אנימציה</h3><ol class="steps">' + m.anim.map(a => "<li>" + SB.ph(a) + "</li>").join("") + "</ol></div>";
-    h += "</div>";
-    if (m.q.length) h += '<div class="m-q">שאלות שנוגעות לרגע הזה:' + m.q.map(n => '<a href="#q-' + n + '">' + n + "</a>").join("") + "</div>";
-    return h + "</article>";
+  // headline shown in small mono under a text moment (English as on the frame)
+  function mono(lines) {
+    const h = lines.filter(l => l[0] === "h").map(l => l[1]);
+    if (h.length) return h.join(" ");
+    const d = lines.find(l => l[0] === "d") || lines.find(l => l[0] === "c") || lines[0];
+    return d ? d[1] : "";
   }
 
-  function stripHTML(it, lead) {
-    const n = it.rows.length;
-    return '<div class="strip ' + (lead ? "lead" : "tail") + '"><div class="strip-label">מעבר · ' + n + (n === 1 ? " פריים" : " פריימים") + '</div><div class="strip-row">' +
-      it.rows.map(r => '<figure class="tf">' + SB.img("", r.img.A, { thumbOnly: true, cap: SB.tc(r.t) + " · " + r.cap, alt: "פריים מעבר " + SB.tc(r.t) }) +
-        '<figcaption><span class="tcs">' + SB.tc(r.t) + "</span>" + SB.esc(r.cap) + "</figcaption></figure>").join("") + "</div></div>";
+  function tile(r, opt) {
+    const tc = SB.tc(r.t);
+    return '<figure class="ft">' + SB.img("", r.img[opt], { thumbOnly: true, corners: false, cap: tc + " · " + r.sc, alt: tc + " " + r.sc }) +
+      '<figcaption><span class="tc">' + tc + "</span>" + SB.esc(r.sc) + "</figcaption></figure>";
   }
+
+  function moment(r) {
+    const m = F.moments[r.tid], opt = choices[r.tid], o = m[opt], tc = SB.tc(r.t);
+    return '<article class="fm" id="m-' + r.tid + '">' +
+      SB.img("", r.img[opt], { cap: tc + " · " + r.sc, alt: tc + " " + r.sc, sizes: "(max-width: 760px) 100vw, 820px" }) +
+      '<div class="fm-txt"><div class="fm-top"><span class="tc">' + tc + "</span>" +
+      (m.optional ? '<span class="opt">אופציונלי</span>' : "") + "</div>" +
+      '<p class="fm-sc">' + SB.esc(r.sc) + "</p>" +
+      '<p class="fm-en" lang="en">' + SB.ph(mono(o.lines)) + "</p>" +
+      '<p class="fm-he">' + SB.ph(m.mean[opt]) + "</p></div></article>";
+  }
+
+  // film order, grouped by beat
+  const byBeat = {};
+  F.rows.forEach(r => (byBeat[r.beat] = byBeat[r.beat] || []).push(r));
+  $("beats").innerHTML = F.beats.map((b, i) => {
+    const rows = byBeat[b.key] || [];
+    return '<section class="beat c-beat" id="beat-' + i + '"><div class="c-bh"><span class="beat-letter">' + b.key + "</span><h2>" + SB.esc(b.short) + "</h2></div>" +
+      '<div class="fgrid">' + rows.map(r => (r.tid && F.moments[r.tid].rows[0] === r.nn ? moment(r) : tile(r, r.tid ? choices[r.tid] : "A"))).join("") +
+      "</div></section>";
+  }).join("");
 
   // nav
   let nav = '<a href="#system">מערכת הטקסט</a><span class="sp"></span>';
-  beats.forEach((b, i) => (nav += '<a class="beat" href="#beat-' + i + '" title="' + SB.esc(b.title) + '">' + b.key + "</a>"));
+  F.beats.forEach((b, i) => (nav += '<a class="beat" href="#beat-' + i + '" title="' + SB.esc(b.short) + '">' + b.key + "</a>"));
   nav += '<span class="sp"></span><a href="#questions">שאלות</a>';
   $("nav").innerHTML = nav;
 
-  // film
-  $("beats").innerHTML = beats.map((b, i) => {
-    const t0 = b.rows[0].t, t1 = b.rows[b.rows.length - 1].t;
-    return '<section class="beat" id="beat-' + i + '"><div class="beat-head"><span class="beat-letter">' + b.key + "</span><div><h2>" +
-      SB.esc(b.title) + '</h2><span class="range">' + SB.tc(t0) + (t1 > t0 ? " → " + SB.tc(t1) : "") + "</span></div></div>" +
-      b.items.map((it, j) => (it.type === "moment" ? momentHTML(it) : stripHTML(it, (b.items[j + 1] || {}).type === "moment"))).join("") + "</section>";
+  // questions, one line each
+  $("qs").innerHTML = F.qshort.map((q, i) => {
+    const n = i + 1, txt = q === "__T12__" ? F.q14short[choices.T12] : q;
+    return '<li id="q-' + n + '"><span class="qn">' + n + "</span><span>" + txt + "</span></li>";
   }).join("");
-
-  // questions
-  $("qs").innerHTML = F.questions.map((q, i) => {
-    const n = i + 1, txt = q === "__T12__" ? F.q14[choices.T12] : q;
-    const refs = (qRefs[n] || []).map(t => '<a href="#m-' + t + '">' + t + "</a>").join("");
-    return '<li id="q-' + n + '"><span class="qn">' + String(n).padStart(2, "0") + "</span><div>" + txt + "</div>" +
-      (refs ? '<div class="refs">ברגעים: ' + refs + "</div>" : "") + "</li>";
-  }).join("");
-
-  // stats
-  const nText = Object.keys(F.moments).length, nFrames = F.rows.length, nTrans = F.rows.filter(r => !r.tid).length;
-  $("stats").innerHTML = [["1:33", "אורך השלד"], [nText, "רגעי טקסט"], [nTrans, "פריימי מעבר"], [nFrames, "פריימים בסך הכל"], [F.questions.length, "שאלות תוכן"]]
-    .map(([b, s]) => '<div class="stat"><b>' + b + "</b><span>" + s + "</span></div>").join("");
 
   SB.lightbox();
 
@@ -74,9 +58,9 @@
     if (!e.isIntersecting) return;
     links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
     const on = links.find(a => a.classList.contains("on"));
-    if (on && on.scrollIntoView && window.innerWidth < 760) on.parentNode.scrollLeft = on.offsetLeft - 40;
+    if (on && window.innerWidth < 760) on.parentNode.scrollLeft = on.offsetLeft - 40;
   }), { rootMargin: "-45% 0px -50% 0px" });
-  document.querySelectorAll("#system, .beat, #questions").forEach(s => io.observe(s));
+  document.querySelectorAll("#system, .c-beat, #questions").forEach(s => io.observe(s));
 
   if (location.hash) { const t = document.querySelector(location.hash); if (t) t.scrollIntoView(); }
   window.SB_READY = true;

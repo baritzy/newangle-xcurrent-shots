@@ -5,7 +5,7 @@
   "data_integrity": "pass",
   "browser_test": "pass",
   "notes": "pass",
-  "page_details": "storyboard 28.10 independent QA pass",
-  "last_updated": "2026-10-28T11:10:11.587Z",
+  "page_details": "storyboard simplified + clean lines, visually checked",
+  "last_updated": "2026-10-28T11:30:36.911Z",
   "notes_details": "27.10 Tzedek zoom notes page: content fact-checked against full transcript by independent agent (13 fixes applied), 16 images all exist and load, 0 em dashes, noindex, no horizontal scroll at 390/500/1280 (Playwright screenshots temp/zoom-2710/qa/)"
 }
