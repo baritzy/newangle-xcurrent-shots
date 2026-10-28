@@ -5,7 +5,7 @@
   "data_integrity": "pass",
   "browser_test": "pass",
   "notes": "pass",
-  "page_details": "real FLEX100 + drones from Blender, glass UGV, final full-film QA",
-  "last_updated": "2026-10-28T13:41:19.927Z",
+  "page_details": "no drone overlap (geometric check), plain XCURRENT wordmark",
+  "last_updated": "2026-10-28T13:55:36.196Z",
   "notes_details": "27.10 Tzedek zoom notes page: content fact-checked against full transcript by independent agent (13 fixes applied), 16 images all exist and load, 0 em dashes, noindex, no horizontal scroll at 390/500/1280 (Playwright screenshots temp/zoom-2710/qa/)"
 }
